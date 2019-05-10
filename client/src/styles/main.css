@@ -1,0 +1,129 @@
+html {
+    box-sizing: border-box;
+    font-family: "Roboto", arial, sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.login {
+    width: 400px;
+    margin: 100px auto;
+}
+
+.pad {
+    padding: 20px;
+}
+
+.loginIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login .loginButton {
+    margin-top: 20px;
+}
+
+.or {
+    margin: 30px 0;
+    font-size: 18px;
+    text-align: center;
+    font-family: "Roboto";
+    font-weight: lighter;
+}
+
+.room {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.room>div {
+    align-items: stretch;
+}
+
+.channelList {
+    background: white;
+    width: 200px;
+    border-right: 2px solid #333;
+}
+
+.channelList li {
+    color: white;
+}
+
+.chatArea {
+    flex-grow: 1;
+    min-width: 600px;
+    border-right: 2px solid #333;
+    position: relative;
+}
+
+.messages {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    overflow: auto;
+    padding: 10px;
+}
+
+.inputArea {
+    position: absolute;
+    height: 60px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputArea form {
+    width: 95%;
+}
+
+.inputArea input {
+    width: 100%;
+    padding: 8px;
+    outline: 0;
+}
+
+.userList {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.userList .users {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.userList .signout {
+    display: flex;
+    height: 75px;
+    justify-content: center;
+    align-items: center;
+}
+
+.messageName {
+    font-weight: bold;
+}
+
+.messageColon {
+    padding: 0 10px;
+}
+
+.messageTimestamp {
+    display: block;
+    color: #ccc;
+    font-style: italic;
+    font-size: 12px;
+}

@@ -1,16 +1,24 @@
-const users = require('./users')
-
-
 const initSocket = function (io) {
-  io.on("connection", socket => {
-    users(io, socket)
+  let users = []
 
-    socket.on('new message', msg => {
-      io.emit('new message', msg)
+  io.on("connection", socket => {
+    socket.on("join", user => {
+      users.push({
+        user,
+        id: socket.id
+      })
+
+      io.emit("user list", users)
     })
 
-    socket.on('IsTyping', isTyping => {
-      io.emit('isTyping', isTyping)
+    socket.on("new message", message => {
+      io.emit("new message", message)
+    })
+
+    socket.on("disconnect", () => {
+      users = users.filter(user => socket.id !== user.id)
+
+      socket.emit("user list", users)
     })
   })
 }
